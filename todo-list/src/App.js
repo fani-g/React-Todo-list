@@ -63,8 +63,6 @@ function App() {
             <Task taskname={task.taskname} key={task.id} id={task.id} deleteTask={deleteTask} editTask={editTask}/>
           );
         })}
-      
-  
     </Wrapper>
   );
 }
