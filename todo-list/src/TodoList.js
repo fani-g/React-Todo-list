@@ -5,7 +5,7 @@ import Headline from "./components/Headline";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState(''); 
+  const [inputValue, setInputValue] = useState('');
   const [editItemId, setEditItemId] = useState(null);
 
   const addTodo = () => {
