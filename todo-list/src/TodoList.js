@@ -6,7 +6,7 @@ import Headline from "./components/Headline";
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [editItemId, setEditItemId] = useState(false);
+  const [editItemId, setEditItemId] = useState(null);
 
   const addTodo = () => {
     if (inputValue.trim() !== '') {
@@ -38,7 +38,8 @@ const TodoList = () => {
   };
 
   const toggleEditMode = (id) => {
-    setEditItemId(editItemId === id ? editItemId : !editItemId);
+    setEditItemId(editItemId === id ? null : id);
+    console.log('editItemId:',editItemId)
   };
 
   return (
@@ -56,7 +57,7 @@ const TodoList = () => {
       </div> 
       {todos.map(todo => (
         <div className="row justify-content-center align-items-center m-2" key={todo.id}>
-          {editItemId ? (
+          {editItemId === todo.id ? (
             <div className="col-lg-4 col-md-4 col-sm-4 col-5">
               <input
                 className="form-control"
